@@ -1,0 +1,58 @@
+#----------------------------------------------------------------------
+# ssd1351.py from https://github.com/boxysean/py-gaugette
+# ported by boxysean
+#
+# This library works with 
+#   Adafruit's 128x128 SPI RGB OLED   https://www.adafruit.com/products/1431
+#
+# The code is based heavily on Adafruit's Arduino library
+#   https://github.com/adafruit/Adafruit-SSD1351-library
+# written by Limor Fried/Ladyada for Adafruit Industries.
+#
+# Some important things to know about this device and SPI:
+#
+# SPI and GPIO calls are made through an abstraction library that calls
+# the appropriate library for the platform.
+# For the RaspberryPi:
+#     wiring2
+#     spidev
+#
+# Presently untested / not supported for BBBlack
+#
+#----------------------------------------------------------------------
+
+# import Adafruit_BBIO.GPIO as gpio
+# import Adafruit_BBIO.SPI as spi
+# import font5x8
+import sys
+import ssd1351 as ssd
+import time
+
+disp = ssd.SSD1351()
+disp.begin()
+# disp.clear_display()
+
+while True:
+    disp.clear_display()
+    # disp.fillScreen(0xFF0000) # green
+    disp.fillScreen(0xFF00) # blue
+    # disp.fillScreen(0xFF000000) # nothing
+    # disp.fillScreen(0xFF) # like, backlight lit but black
+    # disp.fillScreen(0xF0F0F0)
+
+    # time.sleep(0.5)
+
+
+    disp.clear_display()
+    disp.draw_text(32,32,'hey',0xFF00FF)
+    # disp.dump_buffer()
+    # disp.data(disp.bitmap)
+    time.sleep(1)
+
+    disp.clear_display()
+    disp.fillScreen(0xFF0000)
+    time.sleep(0.5)
+
+    # disp.clear_display()
+    # disp.fillScreen(0x0000FF) # colors are G B R order?!
+    # time.sleep(0.5)
