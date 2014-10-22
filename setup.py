@@ -2,7 +2,7 @@ from ez_setup import use_setuptools
 use_setuptools()
 from setuptools import setup, find_packages
 
-setup(name              = 'py-ssd1351',
+setup(name              = 'ssd1351',
       version           = '0.1',
       author            = 'AKA',
       author_email      = 'aka@akamediasystem.com',
