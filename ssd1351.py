@@ -260,7 +260,7 @@ class SSD1351:
         self.bitmap.dump()
 
     def draw_text(self, x, y, string, color=0xFFFFFF):
-        print 'text is %s' % string
+        # print 'text is %s' % string
         font_bytes = self.font.bytes
         font_rows = self.font.rows
         font_cols = self.font.cols
