@@ -281,7 +281,7 @@ class SSD1351:
                         # self.bitmap.draw_pixel(x, y+row, 0)
                     mask >>= 1
                 x += 1
-            x += 1 # space between characters
+            x += 5 # space between characters
 
     def draw_text_bg(self, x, y, string, color=0xFFFFFF, bg=0x000000):
         # print 'text is %s' % string
