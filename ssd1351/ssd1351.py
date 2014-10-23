@@ -274,7 +274,7 @@ class SSD1351:
                 p += 1
                 for row in range(8):
                     if (mask & 1) != 0:
-                        self.drawPixel(x, y+row, self.encode_color(color))
+                        self.drawPixel(x, y+row, color)
                         # self.bitmap.draw_pixel(x, y+row, self.encode_color(color))
                     else:
                         self.drawPixel(x, y+row, 0)
