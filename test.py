@@ -45,12 +45,15 @@ while True:
     # time.sleep(1)
     c = c+5000
     disp.clear_display()
+    print 'red'
     disp.fillScreen(0b11111111111111110000000000000000)
     time.sleep(1)
     disp.clear_display()
+    print 'green'
     disp.fillScreen(0b00000000000000001111110000000000)
     time.sleep(1)
     disp.clear_display()
+    print 'blue'
     disp.fillScreen(0b00000000000000000000001111111111)
     time.sleep(1)
     # blue is 0x00ff00
