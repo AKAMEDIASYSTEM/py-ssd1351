@@ -52,7 +52,8 @@ while True:
     time.sleep(1)
 
     disp.clear_display()
-    disp.fillScreen(0x00FF00)
+    disp.fillScreen(0x00FF0000)
+    # blue is 0x00ff00
     # disp.fillScreen(disp.color565(0,255,0)) # should be green
     time.sleep(0.5)
 
