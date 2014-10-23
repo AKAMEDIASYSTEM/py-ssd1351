@@ -43,9 +43,9 @@ while True:
     # # disp.dump_buffer()
     # # disp.data(disp.bitmap)
     # time.sleep(1)
-
+    c = c+10
     disp.clear_display()
-    disp.fillScreen(c+10)
+    disp.fillScreen(c)
     # blue is 0x00ff00
     # disp.fillScreen(disp.color565(0,255,0)) # should be green
     # time.sleep(.1)
