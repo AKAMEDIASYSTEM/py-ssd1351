@@ -183,7 +183,7 @@ class SSD1351:
         print 'r g b are ', red, green, blue
 
         redScaled = int(self.scale(red, 0, 0xFF, 0, 0x1F))
-        greenScaled = int(self.scale(green, 0, 0xFF, 0, 0x3E))
+        greenScaled = int(self.scale(green, 0, 0xFF, 0, 0x3F))
         blueScaled = int(self.scale(blue, 0, 0xFF, 0, 0x1F))
 
         print color, redScaled, greenScaled, blueScaled
