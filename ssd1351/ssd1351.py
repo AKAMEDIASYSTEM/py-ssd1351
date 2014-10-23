@@ -12,6 +12,7 @@
 #----------------------------------------------------------------------
 
 import Adafruit_BBIO.GPIO as GPIO
+from __future__ import division
 import Adafruit_BBIO.SPI as SPI
 import font5x8
 import time
