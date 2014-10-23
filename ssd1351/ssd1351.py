@@ -302,6 +302,7 @@ class SSD1351:
                         # self.bitmap.draw_pixel(x, y+row, 0)
                     mask >>= 1
                 x += 1
+            x += 1 # attempt to increase spacing btwn letters
 
     def draw_text2(self, x, y, string, color=0xFFFFFF, size=2, space=1):
         font_bytes = self.font.bytes
