@@ -35,7 +35,7 @@ WHITE    = 0xFFFF
 
 disp = ssd.SSD1351()
 disp.begin()
-# disp.clear_display()
+print disp.scale(5.5,0,11,0,2)
 
 while True:
     # disp.clear_display()
