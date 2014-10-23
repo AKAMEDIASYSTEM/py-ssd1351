@@ -21,10 +21,6 @@
 #
 #----------------------------------------------------------------------
 
-# import Adafruit_BBIO.GPIO as gpio
-# import Adafruit_BBIO.SPI as spi
-# import font5x8
-import sys
 import ssd1351 as ssd
 import time
 # Color definitions
@@ -55,7 +51,7 @@ while True:
 
     disp.clear_display()
     # disp.draw_text(32,32,'hey',disp.color565(0,0,255)) # should be blue
-    disp.draw_text(32,32,'hey',WHITE) # should be green
+    disp.draw_text(32,32,'hey',0xFFFF) # should be green
     # disp.dump_buffer()
     # disp.data(disp.bitmap)
     time.sleep(1)
@@ -65,7 +61,3 @@ while True:
     # blue is 0x00ff00
     # disp.fillScreen(disp.color565(0,255,0)) # should be green
     time.sleep(0.5)
-
-    # disp.clear_display()
-    # disp.fillScreen(0x0000FF) # colors are G B R order?!
-    # time.sleep(0.5)

@@ -176,7 +176,7 @@ class SSD1351:
         return ((x - inLow) / float(inHigh) * outHigh) + outLow;
 
     def encode_color(self, color):
-        # print 'color coming in: ', color
+        print 'color coming in: ', color
         red = (color >> 16) & 0xFF
         green = (color >> 8) & 0xFF
         blue = color & 0xFF
