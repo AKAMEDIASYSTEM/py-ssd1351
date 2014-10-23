@@ -43,7 +43,7 @@ while True:
     # # disp.dump_buffer()
     # # disp.data(disp.bitmap)
     # time.sleep(1)
-    c = c+10
+    c = c+100
     # disp.clear_display()
     disp.fillScreen(c)
     # blue is 0x00ff00
