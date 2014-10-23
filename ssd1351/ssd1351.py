@@ -107,7 +107,8 @@ class SSD1351:
         #  chunk data to work around 255 byte limitation in adafruit implementation of writebytes
         # revisit - change to 1024 when Adafruit_BBIO is fixed.
         # max_xfer = 255 if gaugette.platform == 'beaglebone' else 1024
-        max_xfer = 1024 # whatever BBIO error existed seems fine now
+        # max_xfer = 1024 # whatever BBIO error existed seems fine now
+        max_xfer = 255
         start = 0
         remaining = len(bytes)
         while remaining>0:
@@ -176,7 +177,6 @@ class SSD1351:
         return ((x - inLow) / float(inHigh) * outHigh) + outLow;
 
     def encode_color(self, color):
-        print 'color coming in: ', color
         red = (color >> 16) & 0xFF
         green = (color >> 8) & 0xFF
         blue = color & 0xFF
