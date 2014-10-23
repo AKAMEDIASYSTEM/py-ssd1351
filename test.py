@@ -45,7 +45,7 @@ while True:
     # time.sleep(1)
     c = c+5000
     # disp.clear_display()
-    disp.fillScreen(0b1110000000000000000)
+    disp.fillScreen(0b111110000000000000000)
     # blue is 0x00ff00
     # disp.fillScreen(disp.color565(0,255,0)) # should be green
     # time.sleep(.1)
