@@ -282,6 +282,27 @@ class SSD1351:
                     mask >>= 1
                 x += 1
 
+    def draw_text_bg(self, x, y, string, color=0xFFFFFF, bg=0x000000):
+        # print 'text is %s' % string
+        font_bytes = self.font.bytes
+        font_rows = self.font.rows
+        font_cols = self.font.cols
+
+        for c in string:
+            p = ord(c) * font_cols
+            for col in range(font_cols):
+                mask = font_bytes[p]
+                p += 1
+                for row in range(8):
+                    if (mask & 1) != 0:
+                        self.drawPixel(x, y+row, color)
+                        # self.bitmap.draw_pixel(x, y+row, self.encode_color(color))
+                    else:
+                        self.drawPixel(x, y+row, bg)
+                        # self.bitmap.draw_pixel(x, y+row, 0)
+                    mask >>= 1
+                x += 1
+
     def draw_text2(self, x, y, string, color=0xFFFFFF, size=2, space=1):
         font_bytes = self.font.bytes
         font_rows = self.font.rows
@@ -319,7 +340,7 @@ class SSD1351:
         def __init__(self, cols, rows):
             self.rows = rows
             self.cols = cols
-            print rows, cols
+            # print rows, cols
             self.data = [([0] * self.cols) for i in range(self.rows)]
     
         def clear(self):
