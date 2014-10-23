@@ -174,7 +174,7 @@ class SSD1351:
         self.command(self.CMD_WRITERAM)
 
     def scale(self, x, inLow, inHigh, outLow, outHigh):
-        return ((x - inLow) / float(inHigh) * outHigh) + outLow;
+        return int(((x - inLow) / float(inHigh) * outHigh) + outLow)
 
     def encode_color(self, color):
         red = (color >> 16) & 0xFF
