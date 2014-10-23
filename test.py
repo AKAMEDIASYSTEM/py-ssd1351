@@ -45,15 +45,15 @@ while True:
 
 
     disp.clear_display()
-    disp.draw_text(32,32,'hey',disp.color565(0,0,255)) # should be blue
+    # disp.draw_text(32,32,'hey',disp.color565(0,0,255)) # should be blue
     disp.draw_text(32,32,'hey',disp.encode_color(0x00FF00)) # should be green
     # disp.dump_buffer()
     # disp.data(disp.bitmap)
     time.sleep(1)
 
     disp.clear_display()
-    # disp.fillScreen(disp.encode_color(0xFF0000))
-    disp.fillScreen(disp.color565(0,255,0)) # should be green
+    disp.fillScreen(disp.encode_color(0xFF0000))
+    # disp.fillScreen(disp.color565(0,255,0)) # should be green
     time.sleep(0.5)
 
     # disp.clear_display()
