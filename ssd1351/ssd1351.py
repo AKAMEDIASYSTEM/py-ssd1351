@@ -178,9 +178,9 @@ class SSD1351:
 
     def encode_color(self, color):
         red = (color >> 16) & 0xFF
-        print 'red is ', red
         green = (color >> 8) & 0xFF
         blue = color & 0xFF
+        print 'r g b are ', red, green, blue
 
         redScaled = int(self.scale(red, 0, 0xFF, 0, 0x1F))
         greenScaled = int(self.scale(green, 0, 0xFF, 0, 0x3F))
