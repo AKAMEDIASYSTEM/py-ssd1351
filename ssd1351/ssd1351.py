@@ -10,9 +10,8 @@
 #   https://github.com/adafruit/Adafruit-SSD1351-library
 # written by Limor Fried/Ladyada for Adafruit Industries.
 #----------------------------------------------------------------------
-
-import Adafruit_BBIO.GPIO as GPIO
 from __future__ import division
+import Adafruit_BBIO.GPIO as GPIO
 import Adafruit_BBIO.SPI as SPI
 import font5x8
 import time
