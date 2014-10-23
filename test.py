@@ -35,16 +35,17 @@ WHITE    = 0xFFFF
 
 disp = ssd.SSD1351()
 disp.begin()
+c = 0
 
 while True:
-    disp.clear_display()
-    disp.draw_text(32,32,'hey',0xF800) # should be red
-    # disp.dump_buffer()
-    # disp.data(disp.bitmap)
-    time.sleep(1)
+    # disp.clear_display()
+    # disp.draw_text(32,32,'hey',0xF800) # should be red
+    # # disp.dump_buffer()
+    # # disp.data(disp.bitmap)
+    # time.sleep(1)
 
     disp.clear_display()
-    disp.fillScreen(0xFF00)
+    disp.fillScreen(c+1)
     # blue is 0x00ff00
     # disp.fillScreen(disp.color565(0,255,0)) # should be green
-    time.sleep(1)
+    time.sleep(.1)
