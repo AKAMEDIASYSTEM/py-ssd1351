@@ -180,13 +180,13 @@ class SSD1351:
         red = (color >> 16) & 0xFF
         green = (color >> 8) & 0xFF
         blue = color & 0xFF
-        print 'r g b are ', red, green, blue
+        # print 'r g b are ', red, green, blue
 
         redScaled = int(self.scale(red, 0, 0xFF, 0, 0x1F))
         greenScaled = int(self.scale(green, 0, 0xFF, 0, 0x3F))
         blueScaled = int(self.scale(blue, 0, 0xFF, 0, 0x1F))
 
-        print color, redScaled, greenScaled, blueScaled
+        # print color, redScaled, greenScaled, blueScaled
         
         return (((redScaled << 6) | greenScaled) << 5) | blueScaled
             
