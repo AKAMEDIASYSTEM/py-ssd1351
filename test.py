@@ -35,7 +35,7 @@ disp.begin()
 while True:
     disp.clear_display()
     # disp.fillScreen(0xFF0000) # green
-    disp.fillScreen(0xFFFFFF) # should be GB 
+    disp.fillScreen(0xFF0000) # should be GB 
     # disp.fillScreen(disp.color565(255,0,0)) # should be red
     # disp.fillScreen(0xFF000000) # nothing
     # disp.fillScreen(0xFF) # like, backlight lit but black
