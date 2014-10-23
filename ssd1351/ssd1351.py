@@ -186,7 +186,7 @@ class SSD1351:
 
         # print color, redScaled, greenScaled, blueScaled
         
-        return (((redScaled << 11) | greenScaled) << 5) | blueScaled
+        return (((redScaled << 6) | greenScaled) << 5) | blueScaled
             
     def color565(self, r, g, b): # ints
         c = r >> 3
