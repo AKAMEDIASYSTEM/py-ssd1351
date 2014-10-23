@@ -48,4 +48,4 @@ while True:
     disp.fillScreen(c+1)
     # blue is 0x00ff00
     # disp.fillScreen(disp.color565(0,255,0)) # should be green
-    time.sleep(.1)
+    # time.sleep(.1)
