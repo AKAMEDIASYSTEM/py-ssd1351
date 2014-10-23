@@ -46,13 +46,13 @@ while True:
 
     disp.clear_display()
     # disp.draw_text(32,32,'hey',disp.color565(0,0,255)) # should be blue
-    disp.draw_text(32,32,'hey',0xffff) # should be green
+    disp.draw_text(32,32,'hey',0xFFFF) # should be green
     # disp.dump_buffer()
     # disp.data(disp.bitmap)
     time.sleep(1)
 
     disp.clear_display()
-    disp.fillScreen(0xf800)
+    disp.fillScreen(0xF800)
     # blue is 0x00ff00
     # disp.fillScreen(disp.color565(0,255,0)) # should be green
     time.sleep(0.5)
