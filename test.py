@@ -50,7 +50,7 @@ while True:
     time.sleep(1)
     disp.clear_display()
     print 'green'
-    disp.fillScreen(0b00000000000000001111110000000000)
+    disp.fillScreen(0b00000000000000011111110000000000)
     time.sleep(1)
     disp.clear_display()
     print 'blue'
