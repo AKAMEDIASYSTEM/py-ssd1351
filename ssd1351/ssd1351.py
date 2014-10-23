@@ -178,6 +178,7 @@ class SSD1351:
 
     def encode_color(self, color):
         red = (color >> 16) & 0xFF
+        print 'red is ', red
         green = (color >> 8) & 0xFF
         blue = color & 0xFF
 
