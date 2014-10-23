@@ -35,7 +35,7 @@ disp.begin()
 while True:
     disp.clear_display()
     # disp.fillScreen(0xFF0000) # green
-    disp.fillScreen(disp.encode_color(0xFF0000)) # blue
+    disp.fillScreen(disp.encode_color(0xFF0000)) # should be red
     # disp.fillScreen(0xFF000000) # nothing
     # disp.fillScreen(0xFF) # like, backlight lit but black
     # disp.fillScreen(0xF0F0F0)
@@ -44,13 +44,13 @@ while True:
 
 
     disp.clear_display()
-    disp.draw_text(32,32,'hey',0xFF00FF)
+    disp.draw_text(32,32,'hey',disp.encode_color(0xFF00FF))
     # disp.dump_buffer()
     # disp.data(disp.bitmap)
     time.sleep(1)
 
     disp.clear_display()
-    disp.fillScreen(0xFF0000)
+    disp.fillScreen(disp.encode_color(0xFF0000))
     time.sleep(0.5)
 
     # disp.clear_display()
