@@ -195,7 +195,7 @@ class SSD1351:
         self.flipped = flipped
         if flipped:
             self.command(self.COM_SCAN_INC)
-            self.command(self.CMD_SETREMAP, 0b10010111)
+            self.command(self.CMD_SETREMAP, 0b10110011)
         else:
             self.command(self.COM_SCAN_DEC)
             self.command(self.SET_COM_PINS, 0x02)
