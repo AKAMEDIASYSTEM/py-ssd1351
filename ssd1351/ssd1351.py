@@ -145,7 +145,6 @@ class SSD1351:
         self.command(self.CMD_SETVSL, [0xA0, 0xB5, 0x55])
         self.command(self.CMD_PRECHARGE2, 0x01)
         self.command(self.CMD_DISPLAYON)
-        self.flip_display()
         
     def clear_display(self):
         self.bitmap.clear()
@@ -157,7 +156,7 @@ class SSD1351:
         self.flipped = flipped
         if flipped:
             self.command(self.COM_SCAN_INC)
-            self.command(self.CMD_SETREMAP | 0x00)
+            self.command(self.CMD_SETREMAP, 0x00)
         else:
             self.command(self.COM_SCAN_DEC)
             self.command(self.SET_COM_PINS, 0x02)
