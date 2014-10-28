@@ -37,6 +37,8 @@ class SSD1351:
     CMD_FUNCTIONSELECT     = 0xAB
     CMD_DISPLAYOFF         = 0xAE
     CMD_DISPLAYON          = 0xAF
+    COM_SCAN_INC           = 0xC0
+    COM_SCAN_DEC           = 0xC8
     CMD_PRECHARGE          = 0xB1
     CMD_DISPLAYENHANCE     = 0xB2
     CMD_CLOCKDIV           = 0xB3
@@ -54,6 +56,7 @@ class SSD1351:
     CMD_HORIZSCROLL        = 0x96
     CMD_STOPSCROLL         = 0x9E
     CMD_STARTSCROLL        = 0x9F
+    SET_COM_PINS           = 0xDA
 
     SSD1351WIDTH           = 128
     SSD1351HEIGHT          = 128
@@ -153,7 +156,7 @@ class SSD1351:
         self.flipped = flipped
         if flipped:
             self.command(self.COM_SCAN_INC)
-            self.command(self.SEG_REMAP | 0x00)
+            self.command(self.CMD_SETREMAP | 0x00)
         else:
             self.command(self.COM_SCAN_DEC)
             self.command(self.SET_COM_PINS, 0x02)
@@ -281,6 +284,7 @@ class SSD1351:
                         # self.bitmap.draw_pixel(x, y+row, 0)
                     mask >>= 1
                 x += 1
+            x += 1 # add a space between characters
 
     def draw_text_bg(self, x, y, string, color=0xFFFFFF, bg=0x000000):
         # print 'text is %s' % string
@@ -302,7 +306,7 @@ class SSD1351:
                         # self.bitmap.draw_pixel(x, y+row, 0)
                     mask >>= 1
                 x += 1
-            x += 1 # attempt to increase spacing btwn letters
+            x += 1 # add a space between characters
 
     def draw_text2(self, x, y, string, color=0xFFFFFF, size=2, space=1):
         font_bytes = self.font.bytes
