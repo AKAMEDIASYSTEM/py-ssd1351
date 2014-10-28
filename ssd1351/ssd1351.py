@@ -18,7 +18,7 @@ import time
 import sys
 
 class SSD1351:
-
+    
     DELAYS_HWFILL = 3
     DELAYS_HWLINE = 1
 
@@ -60,7 +60,46 @@ class SSD1351:
 
     SSD1351WIDTH           = 128
     SSD1351HEIGHT          = 128
+    '''
+    # the below are ssd1306 commands
+    EXTERNAL_VCC   = 0x1
+    SWITCH_CAP_VCC = 0x2
+        
+    SET_LOW_COLUMN        = 0x00
+    SET_HIGH_COLUMN       = 0x10
+    SET_MEMORY_MODE       = 0x20
+    SET_COL_ADDRESS       = 0x21
+    SET_PAGE_ADDRESS      = 0x22
+    RIGHT_HORIZ_SCROLL    = 0x26
+    LEFT_HORIZ_SCROLL     = 0x27
+    VERT_AND_RIGHT_HORIZ_SCROLL = 0x29
+    VERT_AND_LEFT_HORIZ_SCROLL = 0x2A
+    DEACTIVATE_SCROLL     = 0x2E
+    ACTIVATE_SCROLL       = 0x2F
+    SET_START_LINE        = 0x40
+    SET_CONTRAST          = 0x81
+    CHARGE_PUMP           = 0x8D
+    SEG_REMAP             = 0xA0
+    SET_VERT_SCROLL_AREA  = 0xA3
+    DISPLAY_ALL_ON_RESUME = 0xA4
+    DISPLAY_ALL_ON        = 0xA5
+    NORMAL_DISPLAY        = 0xA6
+    INVERT_DISPLAY        = 0xA7
+    DISPLAY_OFF           = 0xAE
+    DISPLAY_ON            = 0xAF
+    COM_SCAN_INC          = 0xC0
+    COM_SCAN_DEC          = 0xC8
+    SET_DISPLAY_OFFSET    = 0xD3
+    SET_COM_PINS          = 0xDA
+    SET_VCOM_DETECT       = 0xDB
+    SET_DISPLAY_CLOCK_DIV = 0xD5
+    SET_PRECHARGE         = 0xD9
+    SET_MULTIPLEX         = 0xA8
 
+    MEMORY_MODE_HORIZ = 0x00
+    MEMORY_MODE_VERT  = 0x01
+    MEMORY_MODE_PAGE  = 0x02
+    '''
     # Device name will be /dev/spidev-{bus}.{device}
     # dc_pin is the data/commmand pin.  This line is HIGH for data, LOW for command.
     # We will keep d/c low and bump it high only for commands with data
@@ -156,7 +195,7 @@ class SSD1351:
         self.flipped = flipped
         if flipped:
             self.command(self.COM_SCAN_INC)
-            self.command(self.CMD_SETREMAP, 0x00)
+            self.command(self.CMD_SETREMAP, 0x01)
         else:
             self.command(self.COM_SCAN_DEC)
             self.command(self.SET_COM_PINS, 0x02)
