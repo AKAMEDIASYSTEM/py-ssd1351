@@ -194,8 +194,8 @@ class SSD1351:
     def flip_display(self, flipped=True):
         self.flipped = flipped
         if flipped:
-            # self.command(self.COM_SCAN_INC)
-            self.command(self.CMD_SETREMAP, 0xB6)
+            self.command(self.COM_SCAN_INC)
+            self.command(self.CMD_SETREMAP, 0xB7)
         else:
             self.command(self.COM_SCAN_DEC)
             self.command(self.SET_COM_PINS, 0x02)
