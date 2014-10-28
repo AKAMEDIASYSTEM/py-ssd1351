@@ -145,6 +145,7 @@ class SSD1351:
         self.command(self.CMD_SETVSL, [0xA0, 0xB5, 0x55])
         self.command(self.CMD_PRECHARGE2, 0x01)
         self.command(self.CMD_DISPLAYON)
+        self.flip_display()
         
     def clear_display(self):
         self.bitmap.clear()
