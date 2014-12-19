@@ -1,6 +1,7 @@
 # from ez_setup import use_setuptools
 # use_setuptools()
 # from setuptools import setup, find_packages
+from distutils.core import setup
 
 setup(name              = 'ssd1351',
       version           = '0.1',
