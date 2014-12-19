@@ -1,7 +1,6 @@
 from ez_setup import use_setuptools
 use_setuptools()
 from setuptools import setup, find_packages
-# from distutils.core import setup
 
 setup(name              = 'ssd1351',
       version           = '0.1',
@@ -11,4 +10,4 @@ setup(name              = 'ssd1351',
       license           = 'MIT',
       url               = 'https://github.com/AKAMEDIASYSTEM/py-ssd1351',
       install_requires  = ['Adafruit_BBIO'],
-      packages          = ['distutils', 'distutils.command'])
+      packages          = find_packages())
